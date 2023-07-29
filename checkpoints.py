@@ -34,7 +34,16 @@ class Solution:
             #type num: list of int
             #return type: int
             max = -1
-            for i in range (0, 3):
+            def bubsort(arr):
+                for i in range (0, len(arr)):
+                    for j in range (i+1, len(arr)):
+                        if (arr[j] > arr[i]):
+                            tmp = arr[j]
+                            arr[j] = arr[i]
+                            arr[i] = tmp
+                return arr
+            checkpoints = bubsort(checkpoints)
+            for i in range (0, len(checkpoints)-1):
                 if max < abs(checkpoints[i] - checkpoints[i+1]):
                     max = abs(checkpoints[i] - checkpoints[i+1])
             #TODO: Write code below to returnn an int with the solution to the prompt.
